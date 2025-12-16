@@ -196,6 +196,8 @@ function displayProducts(products) {
   });
 }
 
+
+
 function cekNick() {
     var id = $('#id').val();
     if (id === "") {
@@ -213,7 +215,7 @@ function cekNick() {
         },
         success: function (response) {
             if (response.hasOwnProperty('error_msg')) {
-                $('#nick').text('Tidak Ditemukan!');
+                $('#nick').text('Nama Tidak Ditemukan!');
                 $('#theend').hide();
             } else {
                 $('#nick').text(response.nickname);
@@ -384,3 +386,4 @@ function topFunction() {
       }
 
     });
+
