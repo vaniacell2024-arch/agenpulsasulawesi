@@ -154,7 +154,7 @@ function displayProducts(products) {
       const hargaReseller = product.harga_produk - 100;
       hargaResellerFormatted = formatRupiah(hargaReseller);
     }
-    const stokText = product.stok <= 0 ? "GANGGUAN" : product.stok;
+    const stokText = product.stok <= 0 ? "Gangguan" : product.stok;
     const listItem = document.createElement("div");
     listItem.classList.add("box", "product", "animate__animated", "animate__flipInX");
     listItem.setAttribute("data-product-name", product.nama_produk);
@@ -206,7 +206,7 @@ function cekNick() {
     
     $.ajax({
         method: "GET",
-        url: "https://payday.my.id/trueid/game/" + games + "/?id=" + id + "&key=KoboStore",
+        url: "https://api.payday.my.id/trueid/bill/pln/?" + pln + "/?id=" + id + "&key=apikey",
         beforeSend: function () {
             $('#nick').html('<i class="fas fa-spinner"></i> Mengecek...');
             $('#theend').show();
@@ -382,4 +382,5 @@ function topFunction() {
         $(this).val(cek + ceka)
         getNmr(cek + ceka);
       }
+
     });
